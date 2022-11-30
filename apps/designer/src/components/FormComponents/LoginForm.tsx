@@ -6,9 +6,17 @@ import EnterOtpForm from "./EnterOtpForm";
 import SavedHouseForm from "./SavedHouseForm";
 import CancelButton from "../Buttons/CancelButton";
 
+let blah = function() { return undefined; };
+
 interface LoginFormProps {
   closeSavePopup: () => void;
 }
+export function PropFunc(prop): JSX.Element {
+  console.log("prop",prop);
+  blah= prop;
+  return <div></div>;
+}
+
 const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
   const [page, setPage] = useState<number>(0);
   const FormTitles = ["Save", "Hello", "OTP", "Saved"];
@@ -47,10 +55,12 @@ const LoginForm = ({ closeSavePopup }: LoginFormProps) => {
             if (page === FormTitles.length - 1) {
               closeSavePopup();
             } else {
+              console.log("numProp", blah);
+              blah();
               setPage((p) => p + 1);
             }
           }}
-          disabled={FormTitles.length === 3}
+          disable={false}
         />
       </div>
     </div>
