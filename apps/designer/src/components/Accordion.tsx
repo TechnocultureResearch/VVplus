@@ -6,12 +6,7 @@ const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="flex flex-col gap-[10px] h-fit">
-      <div
-        className={` select-none cursor-pointer rounded-[15px] 
-      
-      
-      `}
-      >
+      <div className={` select-none cursor-pointer rounded-[15px]`}>
         <AccordionLayout
           title="Main Gate"
           design="Minimal Floral"
@@ -26,11 +21,7 @@ const Accordion = () => {
           <SelectCarousel />
         </AccordionLayout>
       </div>
-      <div
-        className={`select-none  cursor-pointer  rounded-[15px]  
-      
-      `}
-      >
+      <div className={`select-none  cursor-pointer  rounded-[15px]`}>
         <AccordionLayout
           title="Garden"
           design="All Steel"
@@ -45,12 +36,7 @@ const Accordion = () => {
           <SelectCarousel />
         </AccordionLayout>
       </div>
-
-      <div
-        className={`select-none cursor-pointerrounded-[15px]  
-      
-      `}
-      >
+      <div className={`select-none cursor-pointerrounded-[15px]`}>
         <AccordionLayout
           title="Balcony Railings"
           design="All Steel"
@@ -89,15 +75,3 @@ const Accordion = () => {
 };
 
 export default Accordion;
-
-/*
-<div classNameName='flex flex-col justify-center items-center'>
-          <AccordionLayout title="Accordion 1">
-            This is Accordion 1 Content    
-          </AccordionLayout>
-
-          <AccordionLayout title="Accordion 2">
-            This is Accordion 2 Content    
-          </AccordionLayout>
-      </div>
- */

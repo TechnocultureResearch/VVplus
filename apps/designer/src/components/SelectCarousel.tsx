@@ -1,13 +1,19 @@
-// import { useState } from "react";
-import data from "../../public/railings_sf.json";
+import { useState } from "react";
+// import data from "../../public/railings_sf.json";
+import data from "../../public/house.json";
+import { selector } from "./elements/selector";
 
 const SelectCarousel = () => {
-  const root_url = data.root_url;
-  // const [active, setActive] = useState(false);
+  const root_url = data.baseUrl;
+  const [active, setActive] = useState(0);
+  function changeDesign(id: number, category: string) {
+    setActive(id);
+    selector(active, category);
+  }
   return (
     <>
-      <div className="box-border relative flex  gap-[5px] max-h-[200px]   scrollbar-hide rounded-[10px] h-[150px]  overflow-x-hidden overflow-x-scroll overflow-y-hidden font-sans h-fit snap-mandatory scroll-smooth snap-x whitespace-nowrap w-fit">
-        {data.options.map((e) => (
+      <div className="box-border relative flex  gap-[5px] max-h-[200px] scrollbar-hide rounded-[10px] h-[150px] overflow-x-hidden overflow-x-scroll overflow-y-hidden font-sans h-fit snap-mandatory scroll-smooth snap-x whitespace-nowrap w-fit">
+        {data.choosableOptions[0].map((e) => (
           <>
             <img
               key={e.id}
@@ -15,7 +21,10 @@ const SelectCarousel = () => {
               alt="..."
               height=""
               width="155px"
-              className="rounded-[10px] h-[110px]   "
+              className="rounded-[10px] h-[110px]"
+              onClick={() => {
+                changeDesign(e.id, e.category);
+              }}
             />
             <div>
               <p
